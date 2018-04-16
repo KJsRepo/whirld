@@ -252,6 +252,10 @@ class World {
 
         void update() {
            
+            int areaWidth = this->sizeX;
+            int areaHeight = this->sizeY;
+            int areaTotal = areaWidth * areaHeight;
+            
             worldTotalWater = 0;
             
             if(this->isRaining == true) {
@@ -271,27 +275,17 @@ class World {
                 tileBuffer[y] = new Tile[sizeX];
             }*/
             
-            for(int offset = 0; offset <= 1; offset++) {
-                for(int y = 2; y < (this->sizeY - 1); y++) {
-                    for(int x = 2; x < (this->sizeX - 1); x++) {
-                        
-                        //  Only process odd co-ords on odd frames, even on even
-                        if((updates + offset) + (y % 2) % 2 == x % 2) {
-                            continue;
-                        }
-                        
-                        if(offset + frame % 2 == 0) {
-                            int curX = SCREEN_WIDTH - x;
-                            int curY = SCREEN_HEIGHT - y;
-                        } else if(offset + frame % 1 == 1) {
-                            int curX = x;
-                            int curY = y;
-                        } 
-                        
-                        updateTile(x, y);
-                    }
-                }
+            //for(int offset = 0; offset <= 1; offset++) {
+            
+            for(int pixCount = 0; pixCount < areaTotal; pixCount++) {
                 
+                int curX = rand() % areaWidth;
+                int curY = rand() % areaHeight;
+                
+                if(curX < 2 || curX > this->sizeX - 2 || curY < 2 || curY > this->sizeY - 2) continue;
+                                            
+                updateTile(curX, curY);
+ 
             }
 
             /*
