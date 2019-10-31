@@ -21,8 +21,8 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux
-CND_DLIB_EXT=so
+CND_PLATFORM=MinGW-Windows
+CND_DLIB_EXT=dll
 CND_CONF=Debug
 CND_DISTDIR=dist
 CND_BUILDDIR=build
@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/911596cf/PerlinNoise.o \
+	${OBJECTDIR}/Perlin/PerlinNoise.o \
 	${OBJECTDIR}/main.o
 
 
@@ -43,8 +43,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=-lSDL2
-CXXFLAGS=-lSDL2
+CCFLAGS=-lmingw32 -static-libgcc -static-libstdc++
+CXXFLAGS=-lmingw32 -static-libgcc -static-libstdc++
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -53,25 +53,29 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=-L/C/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2 /C/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2main.a /C/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2.dll.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld.exe: /C/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2main.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld.exe: /C/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2.dll.a
+
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/911596cf/PerlinNoise.o: /home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.cpp 
-	${MKDIR} -p ${OBJECTDIR}/_ext/911596cf
+${OBJECTDIR}/Perlin/PerlinNoise.o: Perlin/PerlinNoise.cpp
+	${MKDIR} -p ${OBJECTDIR}/Perlin
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/911596cf/PerlinNoise.o /home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.cpp
+	$(COMPILE.cc) -g -I. -I/C/Development/SDL2-2.0.8/i686-w64-mingw32/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Perlin/PerlinNoise.o Perlin/PerlinNoise.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -I. -I/C/Development/SDL2-2.0.8/i686-w64-mingw32/include -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:
@@ -79,7 +83,6 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/whirld
 
 # Subprojects
 .clean-subprojects:

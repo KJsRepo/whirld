@@ -1,0 +1,27 @@
+x+y+offset % 3 EVERY THIRD TILE, run 3 times
+
+when moving soil via water erosion, move 20% each to left and right of destination, and 60% to destination
+
+Root length:
+0 = all water is gathered from surface water, decreased erosion resistance
+1 = all water is gathered from ground water, increased erosion resistance
+
+Root spread:
+0 = able to gather less water from low water source
+1 = able to gather more water from low water source
+
+Leaves:
+0 = Gains less energy from sun, decreases moisture usage
+1 = Gains more energy from sun, increases plant moisture loss, decreases evaporation on tile
+
+Energy Storage:
+0 = Expends little energy
+1 = Expends lots of energy 
+
+Metabolism:
+0 = Spend energy growing
+1 = Spend energy creating seeds
+
+Seed size:
+0 = Tiny, low mass, low stored nutrients, costs little energy
+1 = Large, high mass, high nutrients stored, costs a lot of energy

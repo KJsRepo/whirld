@@ -1,10 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="97">
+<configurationDescriptor version="100">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <itemPath>/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.h</itemPath>
+      <logicalFolder name="SDL2" displayName="SDL2" projectFiles="true">
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_assert.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_atomic.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_audio.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_bits.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_blendmode.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_clipboard.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_config.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_cpuinfo.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_egl.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_endian.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_error.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_events.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_filesystem.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gamecontroller.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gesture.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_haptic.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_hints.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_joystick.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keyboard.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keycode.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_loadso.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_log.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_main.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_messagebox.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mouse.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mutex.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_name.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl_glext.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2ext.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2platform.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_khrplatform.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_pixels.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_platform.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_power.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_quit.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rect.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_render.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_revision.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rwops.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_scancode.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_shape.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_stdinc.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_surface.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_system.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_syswm.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_assert.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_common.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_compare.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_crc32.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_font.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_fuzzer.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_harness.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_images.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_log.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_md5.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_memory.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_random.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_thread.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_timer.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_touch.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_types.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_version.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_video.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_vulkan.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/begin_code.h</itemPath>
+        <itemPath>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/close_code.h</itemPath>
+      </logicalFolder>
+      <itemPath>Perlin/PerlinNoise.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +87,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <itemPath>/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.cpp</itemPath>
+      <itemPath>Perlin/PerlinNoise.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -27,15 +101,30 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
   </logicalFolder>
+  <sourceFolderFilter>^(nbproject)$</sourceFolderFilter>
   <sourceRootList>
     <Elem>.</Elem>
+    <Elem>.</Elem>
+    <Elem>../../../../../Development/SDL2-2.0.8/x86_64-w64-mingw32/include/SDL2</Elem>
+    <Elem>C:\Development\SDL2-2.0.8\i686-w64-mingw32\include\SDL2</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>MinGW|MinGW</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -43,19 +132,383 @@
         <ccTool>
           <incDir>
             <pElem>.</pElem>
+            <pElem>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include</pElem>
           </incDir>
-          <commandLine>-lSDL2</commandLine>
+          <commandLine>-lmingw32 -static-libgcc -static-libstdc++</commandLine>
         </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>C:/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2main.a</linkerLibFileItem>
+            <linkerLibFileItem>C:/Development/SDL2-2.0.8/i686-w64-mingw32/lib/libSDL2.dll.a</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
-      <item path="/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.h"
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL.h"
             ex="false"
             tool="3"
             flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_assert.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_atomic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_audio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_bits.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_blendmode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_clipboard.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_config.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_cpuinfo.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_egl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_endian.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_error.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_events.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_filesystem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gamecontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gesture.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_haptic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_hints.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_joystick.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keyboard.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keycode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_loadso.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_log.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_main.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_messagebox.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mouse.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mutex.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_name.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl_glext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2ext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2platform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_khrplatform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_pixels.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_platform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_power.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_quit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_render.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_revision.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rwops.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_scancode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_shape.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_stdinc.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_surface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_system.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_syswm.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_assert.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_compare.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_crc32.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_font.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_fuzzer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_harness.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_images.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_log.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_md5.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_memory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_random.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_timer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_touch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_version.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_video.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_vulkan.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/begin_code.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/close_code.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Perlin/PerlinNoise.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Perlin/PerlinNoise.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -80,15 +533,369 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.cpp"
-            ex="false"
-            tool="1"
-            flavor2="0">
-      </item>
-      <item path="/home/keith/NetBeansProjects/Whirld/Perlin/PerlinNoise.h"
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL.h"
             ex="false"
             tool="3"
             flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_assert.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_atomic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_audio.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_bits.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_blendmode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_clipboard.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_config.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_cpuinfo.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_egl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_endian.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_error.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_events.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_filesystem.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gamecontroller.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_gesture.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_haptic.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_hints.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_joystick.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keyboard.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_keycode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_loadso.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_log.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_main.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_messagebox.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mouse.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_mutex.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_name.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengl_glext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2ext.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_gl2platform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_opengles2_khrplatform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_pixels.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_platform.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_power.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_quit.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rect.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_render.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_revision.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_rwops.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_scancode.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_shape.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_stdinc.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_surface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_system.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_syswm.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_assert.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_compare.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_crc32.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_font.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_fuzzer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_harness.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_images.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_log.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_md5.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_memory.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_test_random.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_timer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_touch.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_version.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_video.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/SDL_vulkan.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/begin_code.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="C:/Development/SDL2-2.0.8/i686-w64-mingw32/include/SDL2/close_code.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="Perlin/PerlinNoise.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Perlin/PerlinNoise.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

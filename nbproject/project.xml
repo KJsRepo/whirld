@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.cnd.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>Whirld</name>
+            <name>whirld</name>
             <c-extensions/>
             <cpp-extensions>cpp</cpp-extensions>
             <header-extensions>h</header-extensions>
@@ -11,6 +11,9 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>.</sourceRootElem>
+                <sourceRootElem>../../../../../Development/SDL2-2.0.8/x86_64-w64-mingw32/include/SDL2</sourceRootElem>
+                <sourceRootElem>C:\Development\SDL2-2.0.8\i686-w64-mingw32\include\SDL2</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

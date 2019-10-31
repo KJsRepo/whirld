@@ -31,14 +31,16 @@ const int SCREEN_HEIGHT = 600;
 const int HEIGHT_MAX = 255;
  
 const float ABSORPTION_RATE = 0.005;
-const float SURFACE_EVAPORATION_RATE = 0.00005;
+const float SURFACE_EVAPORATION_RATE = 0.005;
 const float GROUND_EVAPORATION_RATE = 0.001;
 const float WATER_PERMEATE_RATE = 0.5;
 const float WATER_FLOW_RATE = 0.05;
 const float RAINFALL_RATE = 0.012;
-const float EROSION_RATE = 0.05;
-const float EROSION_FORCE_MODIFIER = 100; //200?
+const float EROSION_RATE = 0.01;
+const float EROSION_FORCE_MODIFIER = 10; //200?
 const float VEGETATION_GROWTH_RATE = 1;
+
+const float DIAGONAL_FORCE_MODIFIER = 1.414213562373095;
 
 int frame = 0;
 int updates = 0;
@@ -243,7 +245,9 @@ class World {
                     "    SurfaceWater:" << this->tiles[x][y].getSurfaceWater() << 
                     "    Water Level:" << this->tiles[x][y].getAbsoluteWaterLevel() <<
                     "    Saturation:" << this->tiles[x][y].getSaturation() << 
-                    "    Sunlight:" << this->tiles[x][y].getSunlight() << endl;
+                    "    Sunlight:" << this->tiles[x][y].getSunlight() << 
+                    "    World Water Total: " << worldTotalWater << " units" <<endl;
+            
         }
         
         void setRaining(bool val) {
@@ -258,15 +262,47 @@ class World {
             
             worldTotalWater = 0;
             
-            if(this->isRaining == true) {
-                for(int y = 2; y < (this->sizeY - 1); y++) {
-                    for(int x = 2; x < (this->sizeX - 1); x++) {
-                        float curWater = this->tiles[x][y].getSurfaceWater();
-                        if(rand() % 2 == 1) this->tiles[x][y].setSurfaceWater(curWater + RAINFALL_RATE);
-                        worldTotalWater = curWater;
+            for(int y = 2; y < (this->sizeY - 1); y++) {
+                for(int x = 2; x < (this->sizeX - 1); x++) {
+                    
+                    float surfaceWater = this->tiles[x][y].getSurfaceWater();
+                    float saturation = this->tiles[x][y].getSaturation();
+                    
+                    if(this->isRaining == true && rand() % 2 == 1) surfaceWater += RAINFALL_RATE;
+
+                    if(surfaceWater > 0) {
+                        if(surfaceWater >= SURFACE_EVAPORATION_RATE) {
+                            surfaceWater -= SURFACE_EVAPORATION_RATE;
+                        } else {
+                            surfaceWater = 0;
+                        }
+                    } else {
+                        if(saturation >= GROUND_EVAPORATION_RATE) {
+                            saturation -= GROUND_EVAPORATION_RATE;
+                        } else {
+                            saturation = 0;
+                        }
                     }
+
+                    if(saturation < 1) {
+                        if(surfaceWater < ABSORPTION_RATE) {
+                            saturation += surfaceWater;
+                            surfaceWater = 0;
+                        } else {
+                            saturation += ABSORPTION_RATE;
+                            surfaceWater -= ABSORPTION_RATE;
+                        }
+                    }
+                    
+                    
+                    this->tiles[x][y].setSaturation(saturation);
+                    this->tiles[x][y].setSurfaceWater(surfaceWater);
+                    
+                    worldTotalWater += surfaceWater;
+                    
                 }
             }
+            
 
            /* 
             Tile** tileBuffer;//[this->sizeX][this->sizeY];
@@ -302,7 +338,7 @@ class World {
             float surfaceWater = this->tiles[x][y].getSurfaceWater();
             float saturation = this->tiles[x][y].getSaturation();
             int terrainHeight = this->tiles[x][y].getZPos();
-
+/*
             if(surfaceWater > 0) {
                 surfaceWater -= SURFACE_EVAPORATION_RATE;
             } else {
@@ -318,18 +354,45 @@ class World {
                     surfaceWater -= ABSORPTION_RATE;
                 }
             }
-
+            
+            this->tiles[x][y].setSaturation(saturation);
+            this->tiles[x][y].setSurfaceWater(surfaceWater);
+            */
             float absWaterLevel = this->tiles[x][y].getZPos() + surfaceWater;
 
             //  Process 3 random adjacent tiles
-            for(int i = 0; i < 3; i++) {
+            /*for(int i = 0; i < 3; i++) {
+             
+                
                 int rnd = rand() % 9;
                 int curx = (rnd % 3) - 1;
                 int cury = (rnd / 3) - 1;
 
                 if(curx == 0 && cury == 0) {
                     continue;
-                }
+                }*/
+            int lowestIndex = 10;
+            float lowestHeight = 10000;
+            // Find the lowest neighboring square
+            while(lowestIndex == 10) {
+            
+                for(int c = 0; c < 9; c++) {
+                   
+                    if(c == 4) continue;
+                    int curx = (c % 3) - 1;
+                    int cury = (c / 3) - 1;
+                
+                    if(this->tiles[x + curx][y + cury].getZPos() < lowestHeight) {
+                        lowestHeight = this->tiles[x + curx][y + cury].getZPos() + this->tiles[x + curx][y + cury].getSurfaceWater();
+                        lowestIndex = c;
+                    }
+                } 
+                
+                if(lowestIndex == 10) continue;
+                
+                //  REDO INDENTATION< BITCH
+                int curx = (lowestIndex % 3) - 1;
+                int cury = (lowestIndex / 3) - 1;
 
                 float saturationAtPoint = this->tiles[x + curx][y + cury].getSaturation();                        
                 float waterAtPoint = this->tiles[x + curx][y + cury].getSurfaceWater();
@@ -337,39 +400,57 @@ class World {
                 float terrainHeightAtPoint = this->tiles[x + curx][y + cury].getZPos();
                 float terrainDelta = terrainHeight - terrainHeightAtPoint;
 
-                if(waterLevelAtPoint < absWaterLevel) {    
-                    //  Move half of the difference between each water level
-                    float waterToMove = (absWaterLevel - waterLevelAtPoint) * WATER_FLOW_RATE;
-                    if(waterToMove < surfaceWater) {
-                        this->tiles[x + curx][y + cury].setSurfaceWater(waterAtPoint + waterToMove);
-                        this->tiles[x][y].setSurfaceWater(surfaceWater - waterToMove);
-                    } else {
-                        this->tiles[x + curx][y + cury].setSurfaceWater(waterAtPoint + surfaceWater);
-                        this->tiles[x][y].setSurfaceWater(0);
+                if(surfaceWater > 0) {
+                    
+                    if(waterLevelAtPoint < absWaterLevel) {    
+                        //  Move half of the difference between each water level
+                        float waterToMove = (absWaterLevel - waterLevelAtPoint) * WATER_FLOW_RATE;
+
+                        bool isDiagonal;
+                        
+                        if(curx == -1 && cury == -1 || 
+                                curx == 1 && cury == -1 ||
+                                curx == -1 && cury == 1 ||
+                                curx == 1 && cury == 1 ) isDiagonal = true;
+                        
+                        if (isDiagonal == true) waterToMove *= DIAGONAL_FORCE_MODIFIER;
+
+                        if(waterToMove < surfaceWater) {
+                            this->tiles[x + curx][y + cury].setSurfaceWater(waterAtPoint + waterToMove);
+                            this->tiles[x][y].setSurfaceWater(surfaceWater - waterToMove);
+                        } else {
+                            this->tiles[x + curx][y + cury].setSurfaceWater(waterAtPoint + surfaceWater);
+                            this->tiles[x][y].setSurfaceWater(0);
+                        }
+
+                        
+                        //  TODO:  Figure out what this fucking magic does... I do not remember
+                        float erosionForce = waterToMove * EROSION_RATE;
+                        erosionForce = erosionForce * (1 + (EROSION_FORCE_MODIFIER * (erosionForce - RAINFALL_RATE)));
+
+                        //  If there is a more than 1 difference in land height between the squares, trigger a landfall, transferring a tenth of the difference to the destination
+                        if (terrainHeight - terrainHeightAtPoint > 2) {
+                            erosionForce = (terrainHeight - terrainHeightAtPoint) / 10;
+                            if (isDiagonal == true) erosionForce *= DIAGONAL_FORCE_MODIFIER;
+                        }
+                        
+                        this->tiles[x + curx][y + cury].increateZ(erosionForce);
+                        this->tiles[x][y].decreateZ(erosionForce);
+
                     }
-
-                    float erosionForce = waterToMove * EROSION_RATE;
-                    erosionForce = erosionForce * (1 + (EROSION_FORCE_MODIFIER * (erosionForce - RAINFALL_RATE)));
-
-                    this->tiles[x + curx][y + cury].increateZ(erosionForce);
-                    this->tiles[x][y].decreateZ(erosionForce);
-
-                    surfaceWater = this->tiles[x][y].getSurfaceWater();
-
                 }
-
+                
                 if(saturation > saturationAtPoint) {
                     float waterToPermeate = (saturation - saturationAtPoint) * WATER_PERMEATE_RATE * (1 + ((0.5 * terrainDelta) * 0.2)); // TODO:  Change 0.1 to non static
                     this->tiles[x + curx][y + cury].setSaturation(saturationAtPoint + waterToPermeate);
-                    this->tiles[x][y].setSaturation(saturation - waterToPermeate);
-                    saturation = this->tiles[x][y].getSaturation();
+                    this->tiles[x][y].setSaturation(this->tiles[x][y].getSaturation() - waterToPermeate);
                 }
 
             }
 
-            this->tiles[x][y].setSaturation(saturation);
-            this->tiles[x][y].setSurfaceWater(surfaceWater);
-            worldTotalWater += surfaceWater;
+            //this->tiles[x][y].setSaturation(saturation);
+            //this->tiles[x][y].setSurfaceWater(surfaceWater);
+
 
             //  Every 100th frame, update lighting
             if(frame % 100 == 2) {
@@ -436,6 +517,7 @@ class World {
 
 int main(int argc, char** argv) {
 
+    
     SDL_Event event;
     SDL_Window* window = NULL;
     SDL_Renderer* renderer = NULL;
@@ -500,7 +582,7 @@ int main(int argc, char** argv) {
         if(time_since_update > 50) {
             if(worldTotalWater < 80000) {
                 whirld.setRaining(true);
-            } else if (worldTotalWater > 400000) {
+            } else if (worldTotalWater > 200000) {
                 whirld.setRaining(false);
             }
             
@@ -545,11 +627,11 @@ int main(int argc, char** argv) {
         avgFrameTime += (seconds * 1000.0);
         avgFPS = 1.0 / (((avgFrameTime / 1000) / frame));
         
-        cout << "F: " << frame << "         "
+        /*cout << "F: " << frame << "         "
                 "Frame time: " << seconds * 1000.0 << "ms       " <<
                 "World Water Total: " << worldTotalWater << " units         " <<
                 "Avg FPS: " << avgFPS << " fps       " << 
-                "Total processing time: " << avgFrameTime << " ms" << endl;
+                "Total processing time: " << avgFrameTime << " ms" << endl;*/
     }
     /*
     avgFrameTime = avgFrameTime / frame; 
