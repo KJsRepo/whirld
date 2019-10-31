@@ -1,2 +1,2 @@
 # Whirld
-A basic world simulator
+A basic landscape simulator
