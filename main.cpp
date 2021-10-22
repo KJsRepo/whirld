@@ -19,6 +19,9 @@
 #include <thread>
 #include <cmath>
 #include <Perlin/PerlinNoise.h>
+#include <time.h>
+#include <string.h>
+#include <unistd.h>
 
 using namespace std;
 using namespace std::chrono;
@@ -29,7 +32,8 @@ const bool noUpdate = false;
 const int SCREEN_WIDTH = 600;
 const int SCREEN_HEIGHT = 600;
 const int HEIGHT_MAX = 255;
- 
+const int TARGET_WATER = 200000;
+
 const float ABSORPTION_RATE = 0.005;
 const float SURFACE_EVAPORATION_RATE = 0.005;
 const float GROUND_EVAPORATION_RATE = 0.001;
@@ -163,6 +167,7 @@ class Tile {
             this->zPos += val;
         }
         
+        
     private:
         int rVal;
         int gVal;
@@ -253,6 +258,10 @@ class World {
         void setRaining(bool val) {
             this->isRaining = val;
         }
+        
+        bool getRaining() {
+            return this->isRaining;
+        }
 
         void update() {
            
@@ -293,7 +302,6 @@ class World {
                             surfaceWater -= ABSORPTION_RATE;
                         }
                     }
-                    
                     
                     this->tiles[x][y].setSaturation(saturation);
                     this->tiles[x][y].setSurfaceWater(surfaceWater);
@@ -361,7 +369,7 @@ class World {
             float absWaterLevel = this->tiles[x][y].getZPos() + surfaceWater;
 
             //  Process 3 random adjacent tiles
-            /*for(int i = 0; i < 3; i++) {
+            for(int i = 0; i < 3; i++) {
              
                 
                 int rnd = rand() % 9;
@@ -370,10 +378,13 @@ class World {
 
                 if(curx == 0 && cury == 0) {
                     continue;
-                }*/
+                }
+            }
+            
+            // Find the lowest neighboring square to move the water to            
             int lowestIndex = 10;
             float lowestHeight = 10000;
-            // Find the lowest neighboring square
+            
             while(lowestIndex == 10) {
             
                 for(int c = 0; c < 9; c++) {
@@ -513,6 +524,79 @@ class World {
             SDL_RenderCopy(renderer, texture, NULL, NULL);
             SDL_RenderPresent(renderer);
         }
+        
+        
+        void outputToFile() {
+            
+            FILE *fp;
+            char filename[60];
+            struct tm *timenow;
+            
+            string dir = "C:/Users/Keith/Desktop/";
+            time_t now = time(NULL);
+            timenow = gmtime(&now);
+            
+            
+            //strftime(filename, sizeof(filename), "C:/Users/Keith/Desktop/kj.dat", timenow);
+            strftime(filename, sizeof(filename), "%Y_%m_%d_%H_%M_%S_kj.dat", timenow);
+            
+            char finalFile[100];
+            strcpy(finalFile, dir.c_str());
+            strcat(finalFile, filename);
+            
+            fp = fopen(finalFile,"w");
+            
+            int count = 0;
+            for(int y = 2; y < (this->sizeY - 1); y++) {
+                for(int x = 2; x < (this->sizeX - 1); x++) {
+                    
+                    char outChars[200];
+                    
+                    string xstr = std::to_string(x);
+                    strcpy(outChars, xstr.c_str());
+                    
+                    strcat(outChars, ",");
+                    
+                    string ystr = std::to_string(y);
+                    strcat(outChars, ystr.c_str());
+                    
+                    strcat(outChars, ",");
+                    
+                    float z = this->tiles[x][y].getZPos();
+                    string zstr = std::to_string(z);
+                    strcat(outChars, zstr.c_str());
+                    
+                    strcat(outChars, ",");
+                    
+                    float sw = this->tiles[x][y].getSurfaceWater();
+                    string swstr = std::to_string(sw);
+                    strcat(outChars, swstr.c_str());
+                    
+                    strcat(outChars, ",");
+                    
+                    float sun = this->tiles[x][y].getSunlight();
+                    string sunstr = std::to_string(sun);
+                    strcat(outChars, sunstr.c_str());
+                    
+                    strcat(outChars, ",");
+                    
+                    int sat = this->tiles[x][y].getSaturation();
+                    string satstr = std::to_string(sat);
+                    strcat(outChars, satstr.c_str());
+                    
+                    //printf("%d: %f - %s\n", count, z, outChars);
+                    
+                    strcat (outChars, "\n\0");
+                    fprintf(fp, outChars);
+                    
+                    //count = count + 1;
+                    
+                }
+            }
+            
+            fclose(fp);
+            
+        }
 };
 
 int main(int argc, char** argv) {
@@ -551,13 +635,14 @@ int main(int argc, char** argv) {
     
     SDL_RendererInfo info;
     SDL_GetRendererInfo( renderer, &info );
-    cout << "Renderer name: " << info.name << endl;
+    /*cout << "Renderer name: " << info.name << endl;
     cout << "Texture formats: " << endl;
+    
     for( Uint32 i = 0; i < info.num_texture_formats; i++ )
     {
         cout << SDL_GetPixelFormatName( info.texture_formats[i] ) << endl;
     }
-    
+    */
     
     SDL_Texture* texture = SDL_CreateTexture
         (
@@ -580,10 +665,23 @@ int main(int argc, char** argv) {
         const Uint64 start = SDL_GetPerformanceCounter();
                 
         if(time_since_update > 50) {
-            if(worldTotalWater < 80000) {
+            if(worldTotalWater < 80000 and whirld.getRaining() == false) {
                 whirld.setRaining(true);
-            } else if (worldTotalWater > 200000) {
-                whirld.setRaining(false);
+                cout << "Raining" << std::endl;
+            } else if (worldTotalWater > TARGET_WATER) {
+                int bigRainChance = rand() % 10 + 1;
+                
+                if (bigRainChance == 1) {
+                    const float RAINFALL_RATE = 0.024;
+                    const float TARGET_WATER = 600000;
+                    cout << "MONSOON" << std::endl;
+                } else {
+                    const float RAINFALL_RATE = 0.012;
+                    const float TARGET_WATER = 200000;
+                    whirld.setRaining(false);
+                    cout << "Not raining" << std::endl;
+                }
+                
             }
             
             if (!noUpdate) whirld.update();
@@ -606,6 +704,7 @@ int main(int argc, char** argv) {
                 break;
             
             if(event.type == SDL_MOUSEBUTTONDOWN) {
+                whirld.outputToFile();
                 for(int i = 0; i < 10; i++) {
                     int x = event.motion.x + i;
                     int y = event.motion.y;
